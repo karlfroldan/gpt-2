@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+if [[ ! -d $(pwd)/.venv ]]; then
+    echo "Creating Virtual environment"
+    python3 -m venv .venv
+fi
+
+source .venv/bin/activate
+
+pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+pip3 install numpy seaborn jupyterlab IPython scikit-learn transformers ipywidgets
+
+echo
+echo
+echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+echo 'Run `source .venv/bin/activate` to enter virtual environment'
+echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
